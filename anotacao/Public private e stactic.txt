@@ -1,0 +1,89 @@
+Em PHP, os modificadores de acesso `public`, `private` e `static` são usados para controlar
+a visibilidade e o comportamento de propriedades e métodos em uma classe. Eles desempenham um papel
+importante na encapsulação, reutilização de código e organização de classes. 
+Vamos entender cada um deles:
+
+**1. `public`:**
+
+- Quando uma propriedade ou método é declarado como `public`, eles podem ser acessados de qualquer
+lugar, tanto de dentro da classe como de fora dela.
+
+- Isso significa que propriedades e métodos públicos são acessíveis de qualquer objeto da classe
+ou mesmo diretamente da classe, se forem estáticos.
+
+**Exemplo:**
+
+```php
+class MinhaClasse {
+    public $propriedadePublica;
+
+    public function metodoPublico() {
+        // Código do método
+    }
+}
+```
+
+**2. `private`:**
+
+- Quando uma propriedade ou método é declarado como `private`, eles só podem ser acessados 
+dentro da própria classe. Não podem ser acessados de fora da classe ou de subclasses.
+
+- A ideia é que as propriedades e métodos privados encapsulem detalhes internos da classe, 
+protegendo-os contra acesso não autorizado.
+
+**Exemplo:**
+
+```php
+class MinhaClasse {
+    private $propriedadePrivada;
+
+    private function metodoPrivado() {
+        // Código do método
+    }
+}
+```
+
+**3. `static`:**
+
+- Quando uma propriedade ou método é declarado como `static`, eles pertencem à classe 
+em vez de a uma instância específica da classe.
+
+- Isso significa que você pode acessar propriedades e métodos estáticos diretamente da classe, 
+sem precisar criar um objeto da classe.
+
+**Exemplo:**
+
+```php
+class MinhaClasse {
+    public static $propriedadeEstatica;
+
+    public static function metodoEstatico() {
+        // Código do método
+    }
+}
+```
+
+**Exemplo de Uso:**
+
+```php
+// Acesso a propriedade estática
+MinhaClasse::$propriedadeEstatica;
+
+// Chamar método estático
+MinhaClasse::metodoEstatico();
+```
+
+**Observações Importantes:**
+
+- Propriedades estáticas compartilham o mesmo valor entre todas as instâncias da classe e podem
+ ser acessadas sem criar objetos da classe.
+
+- Propriedades e métodos privados são normalmente usados para encapsular detalhes internos e 
+proteger a integridade dos dados.
+
+- Métodos estáticos são úteis quando você deseja criar utilitários ou funções de fábrica associadas
+à classe, que não dependem do estado da instância.
+
+- A escolha de usar `public`, `private` ou `static` depende das necessidades do seu código e do 
+design da classe. Cada modificador tem seu próprio uso apropriado em diferentes contextos de 
+programação.
